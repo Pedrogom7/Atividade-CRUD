@@ -1,6 +1,13 @@
-# Atividade-CRUD
+# RPG Manager System
 
-## Definições
+- Atividade para a disciplina de Desafio Profissional no curso da Unicesumar, 7o semestre, a pedido do professor Eduardo Bonam.
+
+## Link da página:
+https://pedrogom7.github.io/Atividade-CRUD/
+
+
+
+## Definições da Atividade
 - A atividade em questão não será um acréscimo de nota (EXTRA), será um percentual que será descontado da nota final do Aluno, ou seja, a nota máxima é 0% e a mínima é 25%.
 - Não será obrigatório o uso de uma linguagem específica, muito menos das máquinas da Unicesumar. Porém será proibido o uso de ferramentas de IA (Chat GPT por exemplo), caso o aluno utilize alguma dessas ferramentas, a nota será 25% instantaneamente.
 - Envio por meio de Forms disponibilizado no dia 08/Abr,a entrega tem de ser realizada dentro do período de aplicação da avaliação (08/Abr - 13/Abr). Qualquer entrega posterior a isso será desconsiderado e a nota será considerada como 25%.
