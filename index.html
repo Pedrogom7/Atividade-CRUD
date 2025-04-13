@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RPG Manager</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <h1>🛡️ Gerenciador de RPG</h1>
+
+  <section>
+    <h2>Cadastrar Personagem</h2>
+    <form id="form-personagem">
+      <input type="text" placeholder="Nome" required id="nome" />
+      <input type="text" placeholder="Nome Aventureiro" required id="nomeAventureiro" />
+      <select id="classe">
+        <option value="Guerreiro">Guerreiro</option>
+        <option value="Mago">Mago</option>
+        <option value="Arqueiro">Arqueiro</option>
+        <option value="Ladino">Ladino</option>
+        <option value="Bardo">Bardo</option>
+      </select>
+      <input type="number" placeholder="Level" min="1" required id="level" />
+      <input type="number" placeholder="Força (máx. 10)" min="0" max="10" required id="forcaBase" />
+      <input type="number" placeholder="Defesa (máx. 10)" min="0" max="10" required id="defesaBase" />
+      <button type="submit">Criar Personagem</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Cadastrar Item Mágico</h2>
+    <form id="form-item">
+      <input type="text" placeholder="Nome do Item" required id="nomeItem" />
+      <select id="tipoItem">
+        <option value="Arma">Arma</option>
+        <option value="Armadura">Armadura</option>
+        <option value="Amuleto">Amuleto</option>
+      </select>
+      <input type="number" placeholder="Força (0-10)" min="0" max="10" required id="forcaItem" />
+      <input type="number" placeholder="Defesa (0-10)" min="0" max="10" required id="defesaItem" />
+      <button type="submit">Criar Item</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Personagens</h2>
+    <ul id="lista-personagens"></ul>
+  </section>
+
+  <section>
+    <h2>Itens Mágicos</h2>
+    <ul id="lista-itens"></ul>
+  </section>
+
+  <section>
+    <h2>Ações com Personagens</h2>
+    <form id="form-adicionar-item">
+      <input type="text" placeholder="ID do Personagem" required id="idPersonagemItem" />
+      <input type="text" placeholder="ID do Item Mágico" required id="idItemAdicionar" />
+      <button type="submit">Adicionar Item ao Personagem</button>
+    </form>
+
+    <form id="form-remover-item">
+      <input type="text" placeholder="ID do Personagem" required id="idPersonagemRemover" />
+      <input type="text" placeholder="ID do Item Mágico" required id="idItemRemover" />
+      <button type="submit">Remover Item do Personagem</button>
+    </form>
+
+    <form id="form-buscar-amuleto">
+      <input type="text" placeholder="ID do Personagem" required id="idPersonagemBuscarAmuleto" />
+      <button type="submit">Buscar Amuleto</button>
+    </form>
+
+    <div id="resultado-amuleto"></div>
+  </section>
+
+
+  <div id="modal-editar" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="fecharModal()">✖</span>
+      <h2>Editar Personagem</h2>
+      <form id="form-editar-personagem">
+        <input type="hidden" id="edit-id">
+        <label>Nome:</label>
+        <input type="text" id="edit-nome" required><br>
+        <label>Nome Aventureiro:</label>
+        <input type="text" id="edit-nomeAventureiro" required><br>
+        <label>Classe:</label>
+        <select id="edit-classe">
+          <option>Guerreiro</option>
+          <option>Mago</option>
+          <option>Arqueiro</option>
+          <option>Ladino</option>
+          <option>Bardo</option>
+        </select><br>
+        <label>Level:</label>
+        <input type="number" id="edit-level" required><br>
+        <label>Força Base:</label>
+        <input type="number" id="edit-forcaBase" required><br>
+        <label>Defesa Base:</label>
+        <input type="number" id="edit-defesaBase" required><br>
+        <button type="submit">Salvar Alterações</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-editar-item" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close" onclick="fecharModalItem()">✖</span>
+      <h2>Editar Item Mágico</h2>
+      <form id="form-editar-item">
+        <input type="hidden" id="edit-item-id">
+        <label>Nome:</label>
+        <input type="text" id="edit-item-nome" required><br>
+        <label>Tipo:</label>
+        <select id="edit-item-tipo">
+          <option>Arma</option>
+          <option>Armadura</option>
+          <option>Amuleto</option>
+        </select><br>
+        <label>Força:</label>
+        <input type="number" id="edit-item-forca" required><br>
+        <label>Defesa:</label>
+        <input type="number" id="edit-item-defesa" required><br>
+        <button type="submit">Salvar Alterações</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles-js"></div>
+</body>
+
+</html>
